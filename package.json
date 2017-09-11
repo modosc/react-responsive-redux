@@ -1,0 +1,52 @@
+{
+  "name": "react-responsive-redux",
+  "version": "0.0.1",
+  "description": "redux integration for react-responsive",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "jsnext:main": "es/index.js",
+  "files": [
+    "lib/*",
+    "es/*"
+  ],
+  "homepage": "https://github.com/modosc/react-resonsive-redux",
+  "bugs": {
+    "url": "https://github.com/modosc/react-resonsive-redux/issues"
+  },
+  "keywords": [
+    "react",
+    "react-responsive",
+    "responsive",
+    "redux"
+  ],
+  "scripts": {
+    "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-register --require babel-polyfill test/index.js",
+    "clean": "rimraf lib es",
+    "build": "npm run clean && npm run build:commonjs && npm run build:es",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib --source-maps",
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es --source-maps"
+  },
+  "author": {
+    "name": "jonathan schatz",
+    "email": "jon@divisionbyzero.com",
+    "url": "https://github.com/modosc"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.24.1",
+    "chai": "^4.1.2",
+    "cross-env": "^5.0.5",
+    "mocha": "^3.2.0",
+    "rimraf": "^2.6.1",
+    "sinon": "^3.2.1",
+    "sinon-chai": "^2.9.0"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/modosc/react-responsive-redux.git"
+  }
+}
