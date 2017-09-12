@@ -1,10 +1,16 @@
-import { breakPoints } from './defaults'
+import { breakPoints as defaultBreakPoints } from './defaults'
+import { get } from 'lodash'
 
 const SET_MOBILE_DETECT = '@@react-responsive-redux/SET_MOBILE_DETECT'
 
 export const setMobileDetect = ({ phone, tablet, mobile, desktop } = {}) => ({ type: SET_MOBILE_DETECT, phone, tablet, mobile, desktop })
 
-export const buildReducer = ({ sizes = defaultSizes, defaultSize = sizes.desktop }) => {
+export const buildReducer = (options = {}) => {
+  // ugh, babel is passing in undefined as an option here so we can't do destructuring in
+  // the function declaration
+  const breakPoints = get(options, 'breakPoints', defaultBreakPoints)
+  const defaultSize = get(options, 'defaultSize', defaultBreakPoints.tablet + 1)
+
   const initialState = {
     phone: false,
     tablet: false,
@@ -14,8 +20,8 @@ export const buildReducer = ({ sizes = defaultSizes, defaultSize = sizes.desktop
 
   return (state = initialState, action) => {
     switch (action.type) {
-      case actions.SET_MOBILE_DETECT: {
-        const { mobile, tablet, phone, desktop } = actions
+      case SET_MOBILE_DETECT: {
+        const { mobile, tablet, phone, desktop } = action
 
         let fakeWidth
         if (mobile) {
