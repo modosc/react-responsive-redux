@@ -34,19 +34,34 @@
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
     "babel-register": "^6.24.1",
     "chai": "^4.1.2",
     "cross-env": "^5.0.5",
     "mocha": "^3.2.0",
+    "react": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-responsive": "^1.3.4",
+    "redux": "^3.7.2",
     "rimraf": "^2.6.1",
     "sinon": "^3.2.1",
     "sinon-chai": "^2.9.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash.omit": "^4.5.0",
+    "mobile-detect": "^1.3.7"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/modosc/react-responsive-redux.git"
+  },
+  "peerDependencies": {
+    "react": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-responsive": "^1.3.4",
+    "redux": "^3.7.2"
   }
 }
