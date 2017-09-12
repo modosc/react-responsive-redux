@@ -1,15 +1,16 @@
 import { breakPoints as defaultBreakPoints } from './defaults'
-import { get } from 'lodash'
 
 const SET_MOBILE_DETECT = '@@react-responsive-redux/SET_MOBILE_DETECT'
 
 export const setMobileDetect = ({ phone, tablet, mobile, desktop } = {}) => ({ type: SET_MOBILE_DETECT, phone, tablet, mobile, desktop })
 
-export const buildReducer = (options = {}) => {
-  // ugh, babel is passing in undefined as an option here so we can't do destructuring in
-  // the function declaration
-  const breakPoints = get(options, 'breakPoints', defaultBreakPoints)
-  const defaultSize = get(options, 'defaultSize', defaultBreakPoints.tablet + 1)
+export const buildReducer = () => {
+  // TODO - allow users to pass this in - we have to share it with our components
+  // too though so maybe we need a getter/setter on our entire class?
+
+  const breakPoints = defaultBreakPoints
+  // default to a desktop size if in doubt
+  const defaultSize = defaultBreakPoints.tablet + 1
 
   const initialState = {
     phone: false,

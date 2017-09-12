@@ -1,7 +1,6 @@
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 import { breakPoints as defaultBreakPoints } from './defaults';
-import { get } from 'lodash';
 
 var SET_MOBILE_DETECT = '@@react-responsive-redux/SET_MOBILE_DETECT';
 
@@ -16,12 +15,12 @@ export var setMobileDetect = function setMobileDetect() {
 };
 
 export var buildReducer = function buildReducer() {
-  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  // TODO - allow users to pass this in - we have to share it with our components
+  // too though so maybe we need a getter/setter on our entire class?
 
-  // ugh, babel is passing in undefined as an option here so we can't do destructuring in
-  // the function declaration
-  var breakPoints = get(options, 'breakPoints', defaultBreakPoints);
-  var defaultSize = get(options, 'defaultSize', defaultBreakPoints.tablet + 1);
+  var breakPoints = defaultBreakPoints;
+  // default to a desktop size if in doubt
+  var defaultSize = defaultBreakPoints.tablet + 1;
 
   var initialState = {
     phone: false,
