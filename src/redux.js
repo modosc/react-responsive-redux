@@ -4,7 +4,7 @@ const SET_MOBILE_DETECT = '@@react-responsive-redux/SET_MOBILE_DETECT'
 
 export const setMobileDetect = ({ phone, tablet, mobile, desktop } = {}) => ({ type: SET_MOBILE_DETECT, phone, tablet, mobile, desktop })
 
-export const buildReducer = () => {
+export const buildResponsiveReducer = () => {
   // TODO - allow users to pass this in - we have to share it with our components
   // too though so maybe we need a getter/setter on our entire class?
 

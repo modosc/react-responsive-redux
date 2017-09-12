@@ -14,7 +14,7 @@ export var setMobileDetect = function setMobileDetect() {
   return { type: SET_MOBILE_DETECT, phone: phone, tablet: tablet, mobile: mobile, desktop: desktop };
 };
 
-export var buildReducer = function buildReducer() {
+export var buildResponsiveReducer = function buildResponsiveReducer() {
   // TODO - allow users to pass this in - we have to share it with our components
   // too though so maybe we need a getter/setter on our entire class?
 
