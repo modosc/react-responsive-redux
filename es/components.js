@@ -5,45 +5,39 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 // see also components/ScreenSize for another way to consume this data
 import React from 'react';
 import MediaQuery from 'react-responsive';
-import omit from 'lodash.omit';
 import { connect } from 'react-redux';
 import { breakPoints } from './defaults';
 
-// ugly ugly ugly ugly but how else can we get this? it's not exported publicly
-import { features } from './mediaQuery';
+var MediaQueryWrapper = function MediaQueryWrapper() {
+  var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-var responsiveWrapper = function responsiveWrapper(query) {
-  return connect(function (state) {
-    return { fakeWidth: state.responsive.fakeWidth };
-  })(function () {
-    var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  // eslint-disable-next-line no-unused-vars
+  var dispatch = props.dispatch,
+      fakeWidth = props.fakeWidth,
+      other = _objectWithoutProperties(props, ['dispatch', 'fakeWidth']);
 
-    // eslint-disable-next-line no-unused-vars
-    var dispatch = props.dispatch,
-        fakeWidth = props.fakeWidth,
-        _other = _objectWithoutProperties(props, ['dispatch', 'fakeWidth']);
-    // we're going to omit every prop that react-responsive responds to so
-    // our caller doesn't accidentally overwrite stuff
-
-
-    var other = omit(_other, Object.keys(features));
-    var values = { deviceWidth: fakeWidth, width: fakeWidth };
-    return React.createElement(
-      MediaQuery,
-      _extends({ query: query, values: values }, other),
-      props.children
-    );
-  });
+  var values = { deviceWidth: fakeWidth, width: fakeWidth };
+  return React.createElement(
+    MediaQuery,
+    _extends({}, other, { values: values }),
+    props.children
+  );
 };
 
-export { responsiveWrapper };
-export var PhoneScreen = responsiveWrapper('(max-width: ' + breakPoints.phone + 'px)');
-export var TabletScreen = responsiveWrapper('(min-width: ' + (breakPoints.phone + 1) + 'px) and (max-width: ' + breakPoints.tablet + 'px)');
-export var DesktopScreen = responsiveWrapper('(min-width: ' + (breakPoints.tablet + 1) + 'px)');
-export var MobileScreen = responsiveWrapper('(max-width: ' + breakPoints.tablet + 'px)');
+export var responsiveWrapper = function responsiveWrapper() {
+  var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  return connect(function (state) {
+    return _extends({ fakeWidth: state.responsive.fakeWidth }, props);
+  })(MediaQueryWrapper);
+};
 
-export var PhoneScreenHidden = responsiveWrapper('(min-width: ' + (breakPoints.phone + 1) + 'px)');
-export var TabletScreenHidden = responsiveWrapper('(max-width: ' + breakPoints.phone + 'px) or (min-width: ' + (breakPoints.tablet + 1) + 'px)');
-export var DesktopScreenHidden = responsiveWrapper('(max-width: ' + breakPoints.tablet + 'px)');
-export var MobileScreenHidden = responsiveWrapper('(min-width: ' + (breakPoints.tablet + 1) + 'px)');
+export var PhoneScreen = responsiveWrapper({ maxWidth: breakPoints.phone });
+export var TabletScreen = responsiveWrapper({ query: '(min-width: ' + (breakPoints.phone + 1) + 'px) and (max-width: ' + breakPoints.tablet + 'px)' });
+export var DesktopScreen = responsiveWrapper({ minWidth: breakPoints.tablet + 1 });
+export var MobileScreen = responsiveWrapper({ maxWidth: breakPoints.tablet });
+
+export var PhoneScreenHidden = responsiveWrapper({ minWidth: breakPoints.phone + 1 });
+export var TabletScreenHidden = responsiveWrapper({ query: '(max-width: ' + breakPoints.phone + 'px) or (min-width: ' + (breakPoints.tablet + 1) + 'px)' });
+export var DesktopScreenHidden = responsiveWrapper({ maxWidth: breakPoints.tablet });
+export var MobileScreenHidden = responsiveWrapper({ minWidth: breakPoints.tablet + 1 });
 //# sourceMappingURL=components.js.map
