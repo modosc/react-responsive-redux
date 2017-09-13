@@ -50,6 +50,13 @@ Install with [npm](https://www.npmjs.com/):
 ```
 npm install react-responsive-redux
 ```
+`react-responsive-redux` has the following `peerDependencies`:
+```
+"prop-types": "^15.5.10",
+"react": "^15.6.1",
+"react-redux": "^5.0.6",
+"redux": "^3.7.2"
+```
 
 ## Usage
 To use `react-responsive-redux` you need to do the following:
