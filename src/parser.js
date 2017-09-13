@@ -1,7 +1,8 @@
 import MobileDetect from 'mobile-detect'
 
-export const parser = (req) => {
-  const md = new MobileDetect(req.headers['user-agent'])
+export const parser = ({ headers = {} } = {}) => {
+  const ua = headers['user-agent'] || headers['User-Agent']
+  const md = new MobileDetect(ua)
   return {
     phone: !!md.phone(),
     tablet: !!md.tablet(),
