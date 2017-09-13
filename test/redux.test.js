@@ -1,4 +1,4 @@
-import { SET_MOBILE_DETECT, setMobileDetect, responsiveReducer, initialState, defaultSize } from '../src/redux'
+import { SET_MOBILE_DETECT, setMobileDetect, reducer, initialState, defaultSize } from '../src/redux'
 import { breakPoints } from '../src/defaults'
 
 describe('redux', () => {
@@ -17,35 +17,35 @@ describe('redux', () => {
       it('should work with phone', () => {
         const md = { mobile: true, phone: true, tablet: false, desktop: false }
         const expected = { ...initialState, ...md, fakeWidth: breakPoints.phone }
-        expect(responsiveReducer(undefined, { type, ...md }))
+        expect(reducer(undefined, { type, ...md }))
           .to.deep.equal(expected)
       })
       it('should work with mobile but no phone or tablet', () => {
         const md = { mobile: true, phone: false, tablet: false, desktop: false }
         const expected = { ...initialState, ...md, fakeWidth: breakPoints.phone }
-        expect(responsiveReducer(undefined, { type, ...md }))
+        expect(reducer(undefined, { type, ...md }))
           .to.deep.equal(expected)
       })
       it('should work with tablet', () => {
         const md = { mobile: true, phone: false, tablet: true, desktop: false }
         const expected = { ...initialState, ...md, fakeWidth: breakPoints.tablet }
-        expect(responsiveReducer(undefined, { type, ...md }))
+        expect(reducer(undefined, { type, ...md }))
           .to.deep.equal(expected)
       })
       it('should work with desktop', () => {
         const md = { mobile: false, phone: false, tablet: false, desktop: true }
         const expected = { ...initialState, ...md, fakeWidth: breakPoints.tablet + 1 }
-        expect(responsiveReducer(undefined, { type, ...md }))
+        expect(reducer(undefined, { type, ...md }))
           .to.deep.equal(expected)
       })
       it('should work with nothing set', () => {
         const expected = { ...initialState, fakeWidth: defaultSize }
-        expect(responsiveReducer(undefined, { type }))
+        expect(reducer(undefined, { type }))
           .to.deep.equal(expected)
       })
       it('should work with nothing', () => {
         const expected = { ...initialState, fakeWidth: defaultSize }
-        expect(responsiveReducer(undefined, { type }))
+        expect(reducer(undefined, { type }))
           .to.deep.equal(expected)
       })
     })

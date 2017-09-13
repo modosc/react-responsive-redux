@@ -20,7 +20,7 @@ export const initialState = {
   fakeWidth: defaultSize,
 }
 
-export const responsiveReducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
   case SET_MOBILE_DETECT: {
     // use initialState as the default values

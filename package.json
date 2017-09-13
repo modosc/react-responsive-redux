@@ -22,7 +22,7 @@
   "scripts": {
     "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-register --require babel-polyfill --require test/setup.js test/*.test.js",
     "lint": "eslint src/ test/",
-    "lint:fix": "eslint --fix src/ test/",    
+    "lint:fix": "eslint --fix src/ test/",
     "clean": "rimraf lib es",
     "build": "npm run clean && npm run build:commonjs && npm run build:es",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib --source-maps",
