@@ -17,9 +17,13 @@ export const MediaQueryWrapper = (props = {}) => {
 }
 
 MediaQueryWrapper.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   dispatch: PropTypes.func.isRequired,
   fakeWidth: PropTypes.number.isRequired,
+}
+
+MediaQueryWrapper.defaultProps = {
+  children: null,
 }
 
 export const responsiveWrapper = (props = {}) =>
