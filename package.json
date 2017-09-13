@@ -1,6 +1,6 @@
 {
   "name": "react-responsive-redux",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "redux integration for react-responsive",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -9,15 +9,19 @@
     "lib/*",
     "es/*"
   ],
-  "homepage": "https://github.com/modosc/react-resonsive-redux",
+  "homepage": "https://github.com/modosc/react-responsive-redux",
   "bugs": {
-    "url": "https://github.com/modosc/react-resonsive-redux/issues"
+    "url": "https://github.com/modosc/react-responsive-redux/issues"
   },
   "keywords": [
     "react",
     "react-responsive",
     "responsive",
-    "redux"
+    "redux",
+    "ssr",
+    "server",
+    "side",
+    "rendering"
   ],
   "scripts": {
     "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-register --require babel-polyfill --require test/setup.js test/*.test.js",
