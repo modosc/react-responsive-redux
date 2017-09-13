@@ -2,7 +2,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 import { breakPoints } from './defaults';
 
-var SET_MOBILE_DETECT = '@@react-responsive-redux/SET_MOBILE_DETECT';
+export var SET_MOBILE_DETECT = '@@react-responsive-redux/SET_MOBILE_DETECT';
 
 export var setMobileDetect = function setMobileDetect() {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
@@ -11,19 +11,22 @@ export var setMobileDetect = function setMobileDetect() {
       mobile = _ref.mobile,
       desktop = _ref.desktop;
 
-  return { type: SET_MOBILE_DETECT, phone: phone, tablet: tablet, mobile: mobile, desktop: desktop };
+  return {
+    type: SET_MOBILE_DETECT, phone: phone, tablet: tablet, mobile: mobile, desktop: desktop
+  };
 };
 
 // TODO - allow users to pass this in - we have to share it with our components
 // too though so maybe we need a getter/setter on our entire class?
 
 // default to a desktop size if in doubt
-var defaultSize = breakPoints.tablet + 1;
+export var defaultSize = breakPoints.tablet + 1;
 
-var initialState = {
+export var initialState = {
   phone: false,
   tablet: false,
   mobile: false,
+  desktop: false,
   fakeWidth: defaultSize
 };
 
@@ -34,10 +37,12 @@ export var reducer = function reducer() {
   switch (action.type) {
     case SET_MOBILE_DETECT:
       {
-        var mobile = action.mobile,
-            tablet = action.tablet,
-            phone = action.phone,
-            desktop = action.desktop;
+        // use initialState as the default values
+        var _initialState$action = _extends({}, initialState, action),
+            mobile = _initialState$action.mobile,
+            tablet = _initialState$action.tablet,
+            phone = _initialState$action.phone,
+            desktop = _initialState$action.desktop;
 
         var fakeWidth = void 0;
 
@@ -50,9 +55,13 @@ export var reducer = function reducer() {
             // TODO - should we ever get here? default to the lowest value i guess
             fakeWidth = breakPoints.phone;
           }
-        } else {
+        } else if (desktop) {
           fakeWidth = breakPoints.tablet + 1;
+        } else {
+          // nothing set, default to our defaultSize
+          fakeWidth = defaultSize;
         }
+
         return _extends({}, state, { mobile: mobile, tablet: tablet, phone: phone, desktop: desktop, fakeWidth: fakeWidth });
       }
     default:

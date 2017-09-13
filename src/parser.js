@@ -1,6 +1,6 @@
 import MobileDetect from 'mobile-detect'
 
-export const parser = ({ headers = {} } = {}) => {
+export const mobileParser = ({ headers = {} } = {}) => {
   const ua = headers['user-agent'] || headers['User-Agent']
   const md = new MobileDetect(ua)
   return {
