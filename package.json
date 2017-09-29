@@ -1,6 +1,6 @@
 {
   "name": "react-responsive-redux",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "redux integration for react-responsive",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -70,7 +70,7 @@
     "redux": "^3.7.2",
     "redux-test-utils": "^0.1.2",
     "rimraf": "^2.6.1",
-    "sinon": "^3.2.1"
+    "sinon": "^4.0.0"
   },
   "dependencies": {
     "mobile-detect": "^1.3.7",

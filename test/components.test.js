@@ -68,6 +68,13 @@ describe('components', () => {
       const component = shallowWithStore(<Wrapped />, store)
       expect(component).to.have.prop('fakeWidth').deep.equal(fakeWidth)
     })
+    it('reads fakeWidth from redux as a Map', () => {
+      const mapStore = new Map()
+      mapStore.set('responsive', { fakeWidth })
+      const component = shallowWithStore(<Wrapped />, mapStore)
+      expect(component).to.have.prop('fakeWidth').deep.equal(fakeWidth)
+    })
+
     it('passes other props along', () => {
       const component = shallowWithStore(<Wrapped {...{ query }} />, store)
       expect(component).to.have.prop('query').deep.equal(query)

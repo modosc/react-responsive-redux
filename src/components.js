@@ -27,7 +27,10 @@ MediaQueryWrapper.defaultProps = {
 }
 
 export const responsiveWrapper = (props = {}) =>
-  connect(state => ({ fakeWidth: state.responsive.fakeWidth, ...props }))(MediaQueryWrapper)
+  connect(state => ({
+    fakeWidth: (typeof state.get === 'function' ? state.get('responsive') : state.responsive).fakeWidth,
+    ...props,
+  }))(MediaQueryWrapper)
 
 export const PhoneScreen = responsiveWrapper({ maxWidth: breakPoints.phone })
 export const TabletScreen = responsiveWrapper({ query: `(min-width: ${breakPoints.phone + 1}px) and (max-width: ${breakPoints.tablet}px)` })
