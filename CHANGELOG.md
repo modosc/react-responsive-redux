@@ -1,7 +1,12 @@
 ## Change Log
 
-### v0.2.0 (2017/10/04 16:43 +00:00)
-- [0e5d77c](https://github.com/modosc/react-responsive-redux/commit/0e5d77cdf684f0ab6d217a10ca331e93177cec83) support react 16 (@modosc)
+### v0.3.0 (2017/11/02 18:38 +00:00)
+- [1e18bf2](https://github.com/modosc/react-responsive-redux/commit/1e18bf277c44d1b56dc00d5b92e2fc6882f688c1) Dependency updates (@modosc)
+- [#4](https://github.com/modosc/react-responsive-redux/pull/4) MediaQuery child can be a node or func. (@marnusw)
+- [8270e0f](https://github.com/modosc/react-responsive-redux/commit/8270e0ff2433c86d52ec9c027d1908c934b48f4e) MediaQuery child can be a node or func. (@marnusw)
+
+### v0.2.0 (2017/10/04 16:44 +00:00)
+- [aa5c103](https://github.com/modosc/react-responsive-redux/commit/aa5c1037b3a63e47e2425a2079cd91c807777c93) support react 16 (@modosc)
 
 ### v0.1.2 (2017/09/13 21:01 +00:00)
 - [f19de88](https://github.com/modosc/react-responsive-redux/commit/f19de88205ad7cf033e805958a4b6518357dae29) add peerDeps in README.md (@modosc)
