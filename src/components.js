@@ -17,7 +17,7 @@ export const MediaQueryWrapper = (props = {}) => {
 }
 
 MediaQueryWrapper.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   dispatch: PropTypes.func.isRequired,
   fakeWidth: PropTypes.number.isRequired,
 }
