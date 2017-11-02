@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { createMockStore } from 'redux-test-utils'
-import jsdomGlobal from 'jsdom-global'
+import globalJsdom from 'global-jsdom'
 import MediaQuery from 'react-responsive'
 import { MediaQueryWrapper, responsiveWrapper, PhoneScreen, TabletScreen,
   MobileScreen, DesktopScreen, PhoneScreenHidden, TabletScreenHidden,
@@ -24,7 +24,7 @@ const mountWithStore = (component, store) => {
 }
 
 before(() => {
-  global.jsdom = jsdomGlobal()
+  global.jsdom = globalJsdom()
 })
 
 after(() => {

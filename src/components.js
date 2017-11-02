@@ -7,7 +7,9 @@ import { breakPoints } from './defaults'
 
 export const MediaQueryWrapper = (props = {}) => {
   // eslint-disable-next-line no-unused-vars
-  const { dispatch, fakeWidth, children, ...other } = props
+  const {
+    dispatch, fakeWidth, children, ...other
+  } = props
   const values = { deviceWidth: fakeWidth, width: fakeWidth }
   return (
     <MediaQuery {...other} {...{ values }} >

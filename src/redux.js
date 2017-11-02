@@ -2,7 +2,9 @@ import { breakPoints } from './defaults'
 
 export const SET_MOBILE_DETECT = '@@react-responsive-redux/SET_MOBILE_DETECT'
 
-export const setMobileDetect = ({ phone, tablet, mobile, desktop } = {}) => ({
+export const setMobileDetect = ({
+  phone, tablet, mobile, desktop,
+} = {}) => ({
   type: SET_MOBILE_DETECT, phone, tablet, mobile, desktop,
 })
 
@@ -24,7 +26,9 @@ export const reducer = (state = initialState, action) => {
   switch (action.type) {
   case SET_MOBILE_DETECT: {
     // use initialState as the default values
-    const { mobile, tablet, phone, desktop } = { ...initialState, ...action }
+    const {
+      mobile, tablet, phone, desktop,
+    } = { ...initialState, ...action }
 
     let fakeWidth
 
@@ -44,7 +48,9 @@ export const reducer = (state = initialState, action) => {
       fakeWidth = defaultSize
     }
 
-    return { ...state, mobile, tablet, phone, desktop, fakeWidth }
+    return {
+      ...state, mobile, tablet, phone, desktop, fakeWidth,
+    }
   }
   default:
     return state

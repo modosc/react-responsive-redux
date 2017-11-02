@@ -62,7 +62,8 @@ export var reducer = function reducer() {
           fakeWidth = defaultSize;
         }
 
-        return _extends({}, state, { mobile: mobile, tablet: tablet, phone: phone, desktop: desktop, fakeWidth: fakeWidth });
+        return _extends({}, state, { mobile: mobile, tablet: tablet, phone: phone, desktop: desktop, fakeWidth: fakeWidth
+        });
       }
     default:
       return state;
