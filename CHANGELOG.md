@@ -1,8 +1,12 @@
 ## Change Log
 
-### v0.3.0 (2017/11/02 18:38 +00:00)
-- [1e18bf2](https://github.com/modosc/react-responsive-redux/commit/1e18bf277c44d1b56dc00d5b92e2fc6882f688c1) Dependency updates (@modosc)
-- [#4](https://github.com/modosc/react-responsive-redux/pull/4) MediaQuery child can be a node or func. (@marnusw)
+### v0.4.0 (2017/12/15 22:53 +00:00)
+- [ab90c68](https://github.com/modosc/react-responsive-redux/commit/ab90c688f9dfd9ae9d8cdda8f7a122581413c8fb) add bootstrap components (@modosc)
+
+### v0.3.0 (2017/12/15 21:53 +00:00)
+- [c4b82af](https://github.com/modosc/react-responsive-redux/commit/c4b82af78f78820f978d6505f5e46fc4d20e51d0) update CHANGELOG (@modosc)
+- [aa9ccac](https://github.com/modosc/react-responsive-redux/commit/aa9ccac94e6e6ab837f21fce8ea55d01476fa4d1) Dependency updates (@modosc)
+- [a73c006](https://github.com/modosc/react-responsive-redux/commit/a73c00628754ef7ac22ed45d7606cfe3536cd3ff) updates, default to desktop size instead of tablet + 1, explicitly export methods to work around broken webpack treeshaking (@modosc)
 - [8270e0f](https://github.com/modosc/react-responsive-redux/commit/8270e0ff2433c86d52ec9c027d1908c934b48f4e) MediaQuery child can be a node or func. (@marnusw)
 
 ### v0.2.0 (2017/10/04 16:44 +00:00)
