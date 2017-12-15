@@ -1,4 +1,4 @@
-import { mobileParser } from '../src/parser'
+import { mobileParser } from '../src'
 
 describe('mobileParser', () => {
   const req = ua => ({ headers: { 'user-agent': ua } })

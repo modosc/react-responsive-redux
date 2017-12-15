@@ -31,12 +31,22 @@ MediaQueryWrapper.defaultProps = {
 export const responsiveWrapper = (props = {}) =>
   connect(state => ({ fakeWidth: state.responsive.fakeWidth, ...props }))(MediaQueryWrapper)
 
-export const PhoneScreen = responsiveWrapper({ maxWidth: breakPoints.phone })
-export const TabletScreen = responsiveWrapper({ query: `(min-width: ${breakPoints.phone + 1}px) and (max-width: ${breakPoints.tablet}px)` })
-export const DesktopScreen = responsiveWrapper({ minWidth: breakPoints.tablet + 1 })
-export const MobileScreen = responsiveWrapper({ maxWidth: breakPoints.tablet })
+export const XsScreen = responsiveWrapper({ maxWidth: breakPoints.sm - 1 })
+export const SmScreen = responsiveWrapper({ query: `(min-width: ${breakPoints.sm}px) and (max-width: ${breakPoints.md - 1}px)` })
+export const MdScreen = responsiveWrapper({ query: `(min-width: ${breakPoints.md}px) and (max-width: ${breakPoints.lg - 1}px)` })
+export const LgScreen = responsiveWrapper({ query: `(min-width: ${breakPoints.lg}px)` })
 
-export const PhoneScreenHidden = responsiveWrapper({ minWidth: breakPoints.phone + 1 })
-export const TabletScreenHidden = responsiveWrapper({ query: `(max-width: ${breakPoints.phone}px), (min-width: ${breakPoints.tablet + 1}px)` })
-export const DesktopScreenHidden = responsiveWrapper({ maxWidth: breakPoints.tablet })
-export const MobileScreenHidden = responsiveWrapper({ minWidth: breakPoints.tablet + 1 })
+export const XsScreenHidden = responsiveWrapper({ minWidth: breakPoints.sm })
+export const SmScreenHidden = responsiveWrapper({ query: `(max-width: ${breakPoints.sm - 1}px), (min-width: ${breakPoints.md}px)` })
+export const MdScreenHidden = responsiveWrapper({ query: `(max-width: ${breakPoints.md - 1}px), (min-width: ${breakPoints.lg}px)` })
+export const LgScreenHidden = responsiveWrapper({ maxWidth: breakPoints.lg - 1 })
+
+export { XsScreen as PhoneScreen }
+export { SmScreen as TabletScreen }
+export const DesktopScreen = responsiveWrapper({ minWidth: breakPoints.md })
+export const MobileScreen = responsiveWrapper({ maxWidth: breakPoints.md - 1 })
+
+export { XsScreenHidden as PhoneScreenHidden }
+export { SmScreenHidden as TabletScreenHidden }
+export { MobileScreen as DesktopScreenHidden }
+export { DesktopScreen as MobileScreenHidden }

@@ -5,7 +5,8 @@ import globalJsdom from 'global-jsdom'
 import MediaQuery from 'react-responsive'
 import { MediaQueryWrapper, responsiveWrapper, PhoneScreen, TabletScreen,
   MobileScreen, DesktopScreen, PhoneScreenHidden, TabletScreenHidden,
-  DesktopScreenHidden, MobileScreenHidden } from '../src/components'
+  DesktopScreenHidden, MobileScreenHidden, XsScreen, XsScreenHidden, SmScreen,
+  SmScreenHidden, MdScreen, MdScreenHidden, LgScreen, LgScreenHidden } from '../src'
 
 import { breakPoints } from '../src/defaults'
 
@@ -85,28 +86,52 @@ describe('components', () => {
       expect(rendered).to.not.contain(child)
     })
   }
+  describe('XsScreen', () => {
+    itBehavesCorrectly(XsScreen, breakPoints.xs, breakPoints.sm)
+  })
+  describe('XsScreenHidden', () => {
+    itBehavesCorrectly(XsScreenHidden, breakPoints.sm, breakPoints.xs)
+  })
+  describe('SmScreen', () => {
+    itBehavesCorrectly(SmScreen, breakPoints.sm, breakPoints.md)
+  })
+  describe('SmScreenHidden', () => {
+    itBehavesCorrectly(SmScreenHidden, breakPoints.md, breakPoints.sm)
+  })
+  describe('MdScreen', () => {
+    itBehavesCorrectly(MdScreen, breakPoints.md, breakPoints.lg)
+  })
+  describe('MdScreenHidden', () => {
+    itBehavesCorrectly(MdScreenHidden, breakPoints.lg, breakPoints.md)
+  })
+  describe('LgScreen', () => {
+    itBehavesCorrectly(LgScreen, breakPoints.lg, breakPoints.md)
+  })
+  describe('LgScreenHidden', () => {
+    itBehavesCorrectly(LgScreenHidden, breakPoints.md, breakPoints.lg)
+  })
   describe('PhoneScreen', () => {
-    itBehavesCorrectly(PhoneScreen, breakPoints.phone, breakPoints.phone + 1)
+    itBehavesCorrectly(PhoneScreen, breakPoints.xs, breakPoints.sm)
   })
   describe('PhoneScreenHidden', () => {
-    itBehavesCorrectly(PhoneScreenHidden, breakPoints.phone + 1, breakPoints.phone)
+    itBehavesCorrectly(PhoneScreenHidden, breakPoints.sm, breakPoints.xs)
   })
   describe('TabletScreen', () => {
-    itBehavesCorrectly(TabletScreen, breakPoints.tablet, breakPoints.tablet + 1)
+    itBehavesCorrectly(TabletScreen, breakPoints.sm, breakPoints.md)
   })
   describe('TabletScreenHidden', () => {
-    itBehavesCorrectly(TabletScreenHidden, breakPoints.tablet + 1, breakPoints.tablet)
+    itBehavesCorrectly(TabletScreenHidden, breakPoints.md, breakPoints.sm)
   })
   describe('DesktopScreen', () => {
-    itBehavesCorrectly(DesktopScreen, breakPoints.tablet + 1, breakPoints.tablet)
+    itBehavesCorrectly(DesktopScreen, breakPoints.md, breakPoints.sm)
   })
   describe('DesktopScreenHidden', () => {
-    itBehavesCorrectly(DesktopScreenHidden, breakPoints.tablet, breakPoints.tablet + 1)
+    itBehavesCorrectly(DesktopScreenHidden, breakPoints.sm, breakPoints.md)
   })
   describe('MobileScreen', () => {
-    itBehavesCorrectly(MobileScreen, breakPoints.phone, breakPoints.tablet + 1)
+    itBehavesCorrectly(MobileScreen, breakPoints.xs, breakPoints.md)
   })
   describe('MobileScreenHidden', () => {
-    itBehavesCorrectly(MobileScreenHidden, breakPoints.tablet + 1, breakPoints.phone)
+    itBehavesCorrectly(MobileScreenHidden, breakPoints.md, breakPoints.sm)
   })
 })

@@ -1,4 +1,4 @@
-import { breakPoints } from './defaults'
+import { defaultSizes } from './defaults'
 
 export const SET_MOBILE_DETECT = '@@react-responsive-redux/SET_MOBILE_DETECT'
 
@@ -12,7 +12,7 @@ export const setMobileDetect = ({
 // too though so maybe we need a getter/setter on our entire class?
 
 // default to a desktop size if in doubt
-export const defaultSize = breakPoints.dektop
+export const defaultSize = defaultSizes.desktop
 
 export const initialState = {
   phone: false,
@@ -34,15 +34,15 @@ export const reducer = (state = initialState, action) => {
 
     if (mobile) {
       if (phone) {
-        fakeWidth = breakPoints.phone
+        fakeWidth = defaultSizes.phone
       } else if (tablet) {
-        fakeWidth = breakPoints.tablet
+        fakeWidth = defaultSizes.tablet
       } else {
         // TODO - should we ever get here? default to the lowest value i guess
-        fakeWidth = breakPoints.phone
+        fakeWidth = defaultSizes.phone
       }
     } else if (desktop) {
-      fakeWidth = breakPoints.desktop
+      fakeWidth = defaultSizes.desktop
     } else {
       // nothing set, default to our defaultSize
       fakeWidth = defaultSize

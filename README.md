@@ -3,6 +3,10 @@
 ## The Problem
 If you use [react-responsive](https://github.com/contra/react-responsive) and [server-side-rendering](https://facebook.github.io/react/docs/react-dom-server.html) you've probably come across this cryptic warning in your browser console before:
 
+#### react 16
+> Warning: Expected server HTML to contain a matching <span> in <a>.
+
+#### react 15
 > Warning: React attempted to reuse markup in a container but the checksum was invalid. This generally means that you are using server rendering and the markup generated on the server was not what the client was expecting. React injected new markup to compensate which works but you have lost many of the benefits of server rendering. Instead, figure out why the markup being generated is different on the client or server: (client) actid="1">Foo&lt;/h1>&lt;div data-react (server) actid="1">Bar&lt;/h1>&lt;div
 
 This happens when the server and client disagree about the state of the DOM. With [react-responsive](https://github.com/contra/react-responsive) specifically it can be caused by code like this:
@@ -168,38 +172,72 @@ function handleRender(req, res) {
 
 The following convenience components are exported and are all are built using `responsiveWrapper`:
 
+##### Bootstrap sizes
+
+#### &lt;XsScreen&gt;
+```javascript
+export const XsScreen = responsiveWrapper({ maxWidth: 767 })
+```
+#### &lt;XsScreenHidden&gt;
+```javascript
+export const XsScreenHidden = responsiveWrapper({ minWidth: 768 })
+```
+#### &lt;SmScreen&gt;
+```javascript
+export const SmScreen = responsiveWrapper({ query: `(min-width: 768px) and (max-width: 992px)` })
+```
+#### &lt;SmScreenHidden&gt;
+```javascript
+export const SmScreenHidden = responsiveWrapper({ query: `(max-width: 767px), (min-width: 993px)` })
+```
+
+#### &lt;MdScreen&gt;
+```javascript
+export const MdScreen = responsiveWrapper({ query: `(min-width: 993px) and (max-width: 1199px)` })
+```
+#### &lt;MdScreenHidden&gt;
+```javascript
+export const MdScreenHidden = responsiveWrapper({ query: `(max-width: 992px), (min-width: 1200px)` })
+```
+
+#### &lt;LgScreen&gt;
+```javascript
+export const LgScreen = responsiveWrapper({ minWidth: 1200 })
+```
+
+#### &lt;LgScreenHidden&gt;
+```javascript
+export const LgScreenHidden = responsiveWrapper({ maxWidth: 1199 })
+```
+
+##### Generic
+
 #### &lt;PhoneScreen&gt;
-```javascript
-export const PhoneScreen =  responsiveWrapper({ maxWidth: 767 })
-```
+alias for `<XsScreen>`
+
 #### &lt;PhoneScreenHidden&gt;
-```javascript
-export const PhoneScreenHidden =  responsiveWrapper({ minWidth: 768 })
-```
+alias for `<XsScreenHidden>`
+
 #### &lt;TabletScreen&gt;
-```javascript
-export const TabletScreen =  responsiveWrapper({ query: '(min-width: 768px) and (max-width: 992px)' })
-```
+alias for `<SmScreen>`
+
 #### &lt;TabletScreenHidden&gt;
-```javascript
-export const TabletScreenHidden = responsiveWrapper({ query: '(max-width: 767px), (min-width: 992px)' })
-```
+alias for `<SmScreenHidden>`
+
 #### &lt;MobileScreen&gt;
 ```javascript
 export const MobileScreen = responsiveWrapper({ maxWidth: 991 })
 ```
 #### &lt;MobileScreenHidden&gt;
-```javascript
-export const MobileScreenHidden = responsiveWrapper({ minWidth: 992 })
-```
+alias for `<DesktopScreen>`
+
 #### &lt;DesktopScreen&gt;
 ```javascript
 export const DesktopScreeen = responsiveWrapper({ minWidth: 992 })
 ```
 #### &lt;DesktopScreenHidden&gt;
-```javascript
-export const DesktopScreenHidden = responsiveWrapper({ maxWidth: 991 })
-```
+alias for `<MobileScreen>`
+
 #### ES5 Example
 ```javascript
 var React = require('react')
@@ -242,6 +280,10 @@ The current breakpoints are based on [bootstrap's](https://v4-alpha.getbootstrap
 
 |Device Type| Breakpoint |
 |-----------|-----|
+| xs | max-width: 767px |
+| sm | min-width: 768px, max-width: 991px |
+| md | min-width: 992px, max-width: 1199px |
+| lg | min-width: 1200px |
 | Phone | max-width: 767px |
 | Tablet | min-width: 768px, max-width: 991px |
 | Mobile | max-width: 991px |
@@ -263,8 +305,10 @@ Based on this information and our breakpoints we set a fake screen size in our s
 | Phone | 767 |
 | Tablet | 991 |
 | Mobile | 767 |
-| Desktop | 992 |
+| Desktop | 1200 |
 -----------------
+
+Note that the `desktop` fake width is set to `1200px` rather than `992px` - this is because [worldwide trends](http://gs.statcounter.com/screen-resolution-stats) indicate that most desktop views are >= `1200px` and defaulting the `desktop` size to this means that `<LgScreen>` / `<LgScreenHidden>` are more likely to render correctly on the server side.
 
 ### TODO
  * Add support for custom breakpoints

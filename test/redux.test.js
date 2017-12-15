@@ -1,5 +1,4 @@
-import { SET_MOBILE_DETECT, setMobileDetect, reducer, initialState, defaultSize } from '../src/redux'
-import { breakPoints } from '../src/defaults'
+import { SET_MOBILE_DETECT, setMobileDetect, reducer, initialState, defaultSize, defaultSizes } from '../src'
 
 describe('redux', () => {
   describe('actions', () => {
@@ -20,7 +19,7 @@ describe('redux', () => {
         const md = {
           mobile: true, phone: true, tablet: false, desktop: false,
         }
-        const expected = { ...initialState, ...md, fakeWidth: breakPoints.phone }
+        const expected = { ...initialState, ...md, fakeWidth: defaultSizes.phone }
         expect(reducer(undefined, { type, ...md }))
           .to.deep.equal(expected)
       })
@@ -28,7 +27,7 @@ describe('redux', () => {
         const md = {
           mobile: true, phone: false, tablet: false, desktop: false,
         }
-        const expected = { ...initialState, ...md, fakeWidth: breakPoints.phone }
+        const expected = { ...initialState, ...md, fakeWidth: defaultSizes.phone }
         expect(reducer(undefined, { type, ...md }))
           .to.deep.equal(expected)
       })
@@ -36,7 +35,7 @@ describe('redux', () => {
         const md = {
           mobile: true, phone: false, tablet: true, desktop: false,
         }
-        const expected = { ...initialState, ...md, fakeWidth: breakPoints.tablet }
+        const expected = { ...initialState, ...md, fakeWidth: defaultSizes.tablet }
         expect(reducer(undefined, { type, ...md }))
           .to.deep.equal(expected)
       })
@@ -44,7 +43,7 @@ describe('redux', () => {
         const md = {
           mobile: false, phone: false, tablet: false, desktop: true,
         }
-        const expected = { ...initialState, ...md, fakeWidth: breakPoints.desktop }
+        const expected = { ...initialState, ...md, fakeWidth: defaultSizes.desktop }
         expect(reducer(undefined, { type, ...md }))
           .to.deep.equal(expected)
       })

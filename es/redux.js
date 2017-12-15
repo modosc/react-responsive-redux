@@ -1,5 +1,5 @@
 import _extends from "@babel/runtime/helpers/extends";
-import { breakPoints } from './defaults';
+import { defaultSizes } from './defaults';
 export var SET_MOBILE_DETECT = '@@react-responsive-redux/SET_MOBILE_DETECT';
 export var setMobileDetect = function setMobileDetect() {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
@@ -15,11 +15,8 @@ export var setMobileDetect = function setMobileDetect() {
     mobile: mobile,
     desktop: desktop
   };
-}; // TODO - allow users to pass this in - we have to share it with our components
-// too though so maybe we need a getter/setter on our entire class?
-// default to a desktop size if in doubt
-
-export var defaultSize = breakPoints.dektop;
+};
+export var defaultSize = defaultSizes.desktop;
 export var initialState = {
   phone: false,
   tablet: false,
@@ -34,7 +31,6 @@ export var reducer = function reducer() {
   switch (action.type) {
     case SET_MOBILE_DETECT:
       {
-        // use initialState as the default values
         var _initialState$action = _extends({}, initialState, action),
             mobile = _initialState$action.mobile,
             tablet = _initialState$action.tablet,
@@ -45,17 +41,15 @@ export var reducer = function reducer() {
 
         if (mobile) {
           if (phone) {
-            fakeWidth = breakPoints.phone;
+            fakeWidth = defaultSizes.phone;
           } else if (tablet) {
-            fakeWidth = breakPoints.tablet;
+            fakeWidth = defaultSizes.tablet;
           } else {
-            // TODO - should we ever get here? default to the lowest value i guess
-            fakeWidth = breakPoints.phone;
+            fakeWidth = defaultSizes.phone;
           }
         } else if (desktop) {
-          fakeWidth = breakPoints.desktop;
+          fakeWidth = defaultSizes.desktop;
         } else {
-          // nothing set, default to our defaultSize
           fakeWidth = defaultSize;
         }
 
