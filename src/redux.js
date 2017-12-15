@@ -12,7 +12,7 @@ export const setMobileDetect = ({
 // too though so maybe we need a getter/setter on our entire class?
 
 // default to a desktop size if in doubt
-export const defaultSize = breakPoints.tablet + 1
+export const defaultSize = breakPoints.dektop
 
 export const initialState = {
   phone: false,
@@ -42,7 +42,7 @@ export const reducer = (state = initialState, action) => {
         fakeWidth = breakPoints.phone
       }
     } else if (desktop) {
-      fakeWidth = breakPoints.tablet + 1
+      fakeWidth = breakPoints.desktop
     } else {
       // nothing set, default to our defaultSize
       fakeWidth = defaultSize

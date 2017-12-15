@@ -1,4 +1,6 @@
-export * from './redux'
-export * from './components'
-export * from './defaults'
-export * from './parser'
+export { defaultSize, initialState, reducer } from './redux'
+export { MediaQueryWrapper, responsiveWrapper, PhoneScreen, TabletScreen,
+  DesktopScreen, MobileScreen, PhoneScreenHidden, TabletScreenHidden,
+  DesktopScreenHidden, MobileScreenHidden } from './components'
+export { breakpoints } from './defaults'
+export { mobileParser } from './parser'

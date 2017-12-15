@@ -10,6 +10,9 @@ export var breakPoints = {
   // an ipad in portrait mode will match here even though the width might be
   // 1024, 1112, or 1366. for now leave as is - in the future we could handle
   // this by compiling a list of resolutions but that's a huge undertaking.
-  tablet: 991
+  tablet: 991,
+  // this comes from bootstrap lg - we use this as our default desktop size
+  // (even though technically > 991 is desktop most seem to fall here).
+  desktop: 1200
 };
 //# sourceMappingURL=defaults.js.map

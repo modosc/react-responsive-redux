@@ -1,15 +1,15 @@
 {
   "presets": [
-    ["env", {
+    ["@babel/preset-env", {
       "modules": false
     }],
-    "react"
+    "@babel/preset-react"
   ],
-  "plugins": ["transform-object-rest-spread"],
+  "plugins": ["@babel/plugin-proposal-object-rest-spread", "@babel/plugin-transform-runtime"],
   "env": {
     "commonjs": {
-      "presets": ["env", "react"],
-      "plugins": ["add-module-exports"]
+      "presets": ["@babel/preset-env", "@babel/preset-react"],
+      "plugins": ["add-module-exports", "@babel/plugin-transform-runtime"]
     },
   },
 }

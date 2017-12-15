@@ -44,7 +44,7 @@ describe('redux', () => {
         const md = {
           mobile: false, phone: false, tablet: false, desktop: true,
         }
-        const expected = { ...initialState, ...md, fakeWidth: breakPoints.tablet + 1 }
+        const expected = { ...initialState, ...md, fakeWidth: breakPoints.desktop }
         expect(reducer(undefined, { type, ...md }))
           .to.deep.equal(expected)
       })
