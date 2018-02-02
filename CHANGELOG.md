@@ -1,12 +1,20 @@
 ## Change Log
 
+### v0.5.0 (2018/02/02 19:27 +00:00)
+- [09a2c23](https://github.com/modosc/react-responsive-redux/commit/09a2c23e012365bc651aa4f31ee531c6de44c8d0) bump to 0.5.0 (@modosc)
+- [fe362b4](https://github.com/modosc/react-responsive-redux/commit/fe362b4a1a3eea26231a48b1b8010eeb6827f870) add test for component prop (@modosc)
+- [18b2b94](https://github.com/modosc/react-responsive-redux/commit/18b2b9460d2049b15141d3df49529baf5f8e6337) default component to 'div' if not specified (@modosc)
+- [99c7685](https://github.com/modosc/react-responsive-redux/commit/99c7685e913a5f6bbbedd90a1b5a8bd5fd8f7420) react-responsive@4 (@modosc)
+- [3e31aca](https://github.com/modosc/react-responsive-redux/commit/3e31aca9a38cec8c4299115d5fb7b56b92df71a4) mocha -> jest, add workaround for babel arrow function coverage bug (@modosc)
+- [0cdcb04](https://github.com/modosc/react-responsive-redux/commit/0cdcb04f922de6d56271fed721a1b5f917886fb2) update changelog (@modosc)
+
 ### v0.4.0 (2017/12/15 22:53 +00:00)
 - [ab90c68](https://github.com/modosc/react-responsive-redux/commit/ab90c688f9dfd9ae9d8cdda8f7a122581413c8fb) add bootstrap components (@modosc)
 
 ### v0.3.0 (2017/12/15 21:53 +00:00)
+- [a73c006](https://github.com/modosc/react-responsive-redux/commit/a73c00628754ef7ac22ed45d7606cfe3536cd3ff) updates, default to desktop size instead of tablet + 1, explicitly export methods to work around broken webpack treeshaking (@modosc)
 - [c4b82af](https://github.com/modosc/react-responsive-redux/commit/c4b82af78f78820f978d6505f5e46fc4d20e51d0) update CHANGELOG (@modosc)
 - [aa9ccac](https://github.com/modosc/react-responsive-redux/commit/aa9ccac94e6e6ab837f21fce8ea55d01476fa4d1) Dependency updates (@modosc)
-- [a73c006](https://github.com/modosc/react-responsive-redux/commit/a73c00628754ef7ac22ed45d7606cfe3536cd3ff) updates, default to desktop size instead of tablet + 1, explicitly export methods to work around broken webpack treeshaking (@modosc)
 - [8270e0f](https://github.com/modosc/react-responsive-redux/commit/8270e0ff2433c86d52ec9c027d1908c934b48f4e) MediaQuery child can be a node or func. (@marnusw)
 
 ### v0.2.0 (2017/10/04 16:44 +00:00)
