@@ -1,7 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import { createMockStore } from 'redux-test-utils'
-import globalJsdom from 'global-jsdom'
 import MediaQuery from 'react-responsive'
 import { MediaQueryWrapper, responsiveWrapper, PhoneScreen, TabletScreen,
   MobileScreen, DesktopScreen, PhoneScreenHidden, TabletScreenHidden,
@@ -23,14 +22,6 @@ const mountWithStore = (component, store) => {
   }
   return mount(component, { context })
 }
-
-before(() => {
-  global.jsdom = globalJsdom()
-})
-
-after(() => {
-  global.jsdom()
-})
 
 describe('components', () => {
   const query = 'min-width: 123'

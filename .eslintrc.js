@@ -18,9 +18,9 @@ module.exports = {
   },
   plugins: [
     'react',
-    'mocha',
     'babel',
     'unicorn',
+    'jest'
   ],
   rules: {
     indent: [

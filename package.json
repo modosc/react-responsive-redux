@@ -25,7 +25,7 @@
     "ssr"
   ],
   "scripts": {
-    "test": "cross-env BABEL_ENV=commonjs mocha --require @babel/register --require @babel/polyfill --require test/setup.js test/*.test.js",
+    "test": "jest",
     "lint": "eslint src/ test/",
     "lint:fix": "eslint --fix src/ test/",
     "clean": "rimraf lib es",
@@ -42,14 +42,14 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.35",
-    "@babel/core": "^7.0.0-beta.35",
+    "@babel/core": "^7.0.0-beta.39",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.35",
     "@babel/plugin-transform-runtime": "^7.0.0-beta.35",
-    "@babel/polyfill": "^7.0.0-beta.35",
     "@babel/preset-env": "^7.0.0-beta.35",
     "@babel/preset-react": "^7.0.0-beta.35",
-    "@babel/register": "^7.0.0-beta.35",
+    "babel-core": "^7.0.0-0",
     "babel-eslint": "^8.0.0",
+    "babel-jest": "^22.1.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "chai": "^4.1.2",
     "chai-enzyme": "^1.0.0-beta.0",
@@ -61,14 +61,11 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jest": "^21.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-mocha": "^4.11.0",
     "eslint-plugin-react": "^7.3.0",
     "eslint-plugin-unicorn": "^3.0.1",
     "github-changes": "^1.1.0",
-    "global-jsdom": "^4.2.0",
-    "jsdom": "^11.2.0",
-    "mocha": "^4.0.0",
     "prop-types": "^15.5.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -93,5 +90,8 @@
     "react": "^15.6.1 || ^16.0.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/test/setup.js"
   }
 }
