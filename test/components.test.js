@@ -33,6 +33,15 @@ describe('components', () => {
       const component = shallow(<MediaQueryWrapper />)
       expect(component).to.have.type(MediaQuery)
     })
+    it('defaults to div', () => {
+      const component = shallow(<MediaQueryWrapper />)
+      expect(component).to.have.prop('component').deep.equal('div')
+    })
+    it('supports other components', () => {
+      const component = shallow(<MediaQueryWrapper component="p" />)
+      expect(component).to.have.prop('component').deep.equal('p')
+    })
+
     it('handles MediaQuery props', () => {
       const component = shallow(<MediaQueryWrapper {...{ query }} />)
       expect(component).to.have.prop('query').deep.equal(query)
