@@ -2932,7 +2932,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.7, prop-types@^15.6.0:
+prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -3018,13 +3018,12 @@ react-redux@^5.0.6:
     loose-envify "^1.1.0"
     prop-types "^15.5.10"
 
-react-responsive@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-responsive/-/react-responsive-3.0.0.tgz#26e895dbdf748d4473c76cf46d29cb9d824e02ec"
+react-responsive@^4.0.0:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/react-responsive/-/react-responsive-4.0.3.tgz#1dccb135d21329a5b1e3bdfaa4e96b157647b265"
   dependencies:
     hyphenate-style-name "^1.0.0"
     matchmediaquery "^0.2.1"
-    prop-types "^15.5.7"
 
 react-test-renderer@^16.0.0, react-test-renderer@^16.0.0-0:
   version "16.2.0"
