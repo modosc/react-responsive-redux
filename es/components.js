@@ -26,11 +26,13 @@ var MediaQueryWrapper = function MediaQueryWrapper() {
 export { MediaQueryWrapper };
 MediaQueryWrapper.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  component: PropTypes.oneOfType([PropTypes.node, PropTypes.func, PropTypes.string]),
   dispatch: PropTypes.func.isRequired,
   fakeWidth: PropTypes.number.isRequired
 };
 MediaQueryWrapper.defaultProps = {
-  children: null
+  children: null,
+  component: 'div'
 };
 export var responsiveWrapper = function responsiveWrapper() {
   var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};

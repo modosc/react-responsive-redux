@@ -20,12 +20,14 @@ export const MediaQueryWrapper = (props = {}) => {
 
 MediaQueryWrapper.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  component: PropTypes.oneOfType([PropTypes.node, PropTypes.func, PropTypes.string]),
   dispatch: PropTypes.func.isRequired,
   fakeWidth: PropTypes.number.isRequired,
 }
 
 MediaQueryWrapper.defaultProps = {
   children: null,
+  component: 'div',
 }
 
 export const responsiveWrapper = (props = {}) =>
