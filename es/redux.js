@@ -1,4 +1,4 @@
-import _extends from "@babel/runtime/helpers/extends";
+import _objectSpread from "@babel/runtime/helpers/objectSpread";
 import { defaultSizes } from './defaults';
 export var SET_MOBILE_DETECT = '@@react-responsive-redux/SET_MOBILE_DETECT';
 export var setMobileDetect = function setMobileDetect() {
@@ -31,7 +31,7 @@ export var reducer = function reducer() {
   switch (action.type) {
     case SET_MOBILE_DETECT:
       {
-        var _initialState$action = _extends({}, initialState, action),
+        var _initialState$action = _objectSpread({}, initialState, action),
             mobile = _initialState$action.mobile,
             tablet = _initialState$action.tablet,
             phone = _initialState$action.phone,
@@ -53,7 +53,7 @@ export var reducer = function reducer() {
           fakeWidth = defaultSize;
         }
 
-        return _extends({}, state, {
+        return _objectSpread({}, state, {
           mobile: mobile,
           tablet: tablet,
           phone: phone,

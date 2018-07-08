@@ -1,3 +1,4 @@
+import _objectSpread from "@babel/runtime/helpers/objectSpread";
 import _extends from "@babel/runtime/helpers/extends";
 import _objectWithoutProperties from "@babel/runtime/helpers/objectWithoutProperties";
 import React from 'react';
@@ -5,8 +6,7 @@ import PropTypes from 'prop-types';
 import MediaQuery from 'react-responsive';
 import { connect } from 'react-redux';
 import { breakPoints } from './defaults';
-
-var MediaQueryWrapper = function MediaQueryWrapper() {
+export var MediaQueryWrapper = function MediaQueryWrapper() {
   var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
   var dispatch = props.dispatch,
@@ -22,8 +22,6 @@ var MediaQueryWrapper = function MediaQueryWrapper() {
     values: values
   }), children);
 };
-
-export { MediaQueryWrapper };
 MediaQueryWrapper.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   component: PropTypes.oneOfType([PropTypes.node, PropTypes.func, PropTypes.string]),
@@ -37,7 +35,7 @@ MediaQueryWrapper.defaultProps = {
 export var responsiveWrapper = function responsiveWrapper() {
   var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   return connect(function (state) {
-    return _extends({
+    return _objectSpread({
       fakeWidth: state.responsive.fakeWidth
     }, props);
   })(MediaQueryWrapper);

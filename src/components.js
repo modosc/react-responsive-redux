@@ -12,7 +12,7 @@ export const MediaQueryWrapper = (props = {}) => {
   } = props
   const values = { deviceWidth: fakeWidth, width: fakeWidth }
   return (
-    <MediaQuery {...other} {...{ values }} >
+    <MediaQuery {...other} {...{ values }}>
       {children}
     </MediaQuery>
   )
@@ -20,7 +20,11 @@ export const MediaQueryWrapper = (props = {}) => {
 
 MediaQueryWrapper.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-  component: PropTypes.oneOfType([PropTypes.node, PropTypes.func, PropTypes.string]),
+  component: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.func,
+    PropTypes.string,
+  ]),
   dispatch: PropTypes.func.isRequired,
   fakeWidth: PropTypes.number.isRequired,
 }
@@ -30,18 +34,37 @@ MediaQueryWrapper.defaultProps = {
   component: 'div',
 }
 
-export const responsiveWrapper = (props = {}) =>
-  connect(state => ({ fakeWidth: state.responsive.fakeWidth, ...props }))(MediaQueryWrapper)
+export const responsiveWrapper = (props = {}) => connect(state => ({
+  fakeWidth: state.responsive.fakeWidth, ...props,
+}))(MediaQueryWrapper)
 
 export const XsScreen = responsiveWrapper({ maxWidth: breakPoints.sm - 1 })
-export const SmScreen = responsiveWrapper({ query: `(min-width: ${breakPoints.sm}px) and (max-width: ${breakPoints.md - 1}px)` })
-export const MdScreen = responsiveWrapper({ query: `(min-width: ${breakPoints.md}px) and (max-width: ${breakPoints.lg - 1}px)` })
-export const LgScreen = responsiveWrapper({ query: `(min-width: ${breakPoints.lg}px)` })
+export const SmScreen = responsiveWrapper({
+  query: `(min-width: ${breakPoints.sm}px) and (max-width: ${breakPoints.md
+    - 1}px)`,
+})
+export const MdScreen = responsiveWrapper({
+  query: `(min-width: ${breakPoints.md}px) and (max-width: ${breakPoints.lg
+    - 1}px)`,
+})
+export const LgScreen = responsiveWrapper({
+  query: `(min-width: ${breakPoints.lg}px)`,
+})
 
 export const XsScreenHidden = responsiveWrapper({ minWidth: breakPoints.sm })
-export const SmScreenHidden = responsiveWrapper({ query: `(max-width: ${breakPoints.sm - 1}px), (min-width: ${breakPoints.md}px)` })
-export const MdScreenHidden = responsiveWrapper({ query: `(max-width: ${breakPoints.md - 1}px), (min-width: ${breakPoints.lg}px)` })
-export const LgScreenHidden = responsiveWrapper({ maxWidth: breakPoints.lg - 1 })
+export const SmScreenHidden = responsiveWrapper({
+  query: `(max-width: ${breakPoints.sm - 1}px), (min-width: ${
+    breakPoints.md
+  }px)`,
+})
+export const MdScreenHidden = responsiveWrapper({
+  query: `(max-width: ${breakPoints.md - 1}px), (min-width: ${
+    breakPoints.lg
+  }px)`,
+})
+export const LgScreenHidden = responsiveWrapper({
+  maxWidth: breakPoints.lg - 1,
+})
 
 export { XsScreen as PhoneScreen }
 export { SmScreen as TabletScreen }

@@ -1,6 +1,6 @@
 {
   "name": "react-responsive-redux",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "redux integration for react-responsive",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -49,7 +49,7 @@
     "@babel/preset-react": "^7.0.0-beta.35",
     "babel-core": "^7.0.0-0",
     "babel-eslint": "^8.0.0",
-    "babel-jest": "^22.1.0",
+    "babel-jest": "^23.2.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "chai": "^4.1.2",
     "chai-enzyme": "^1.0.0-beta.0",
@@ -58,23 +58,24 @@
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.1",
     "eslint": "^4.6.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-babel": "^4.1.2",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jest": "^21.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.3.0",
-    "eslint-plugin-unicorn": "^3.0.1",
+    "eslint-plugin-unicorn": "^4.0.3",
     "github-changes": "^1.1.0",
+    "jest": "^23.3.0",
     "prop-types": "^15.5.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "react-test-renderer": "^16.0.0",
-    "redux": "^3.7.2",
+    "redux": "^4.0.0",
     "redux-test-utils": "^0.2.2",
     "rimraf": "^2.6.1",
-    "sinon": "^4.0.1"
+    "sinon": "^6.0.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.35",
@@ -89,7 +90,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.1 || ^16.0.0",
     "react-redux": "^5.0.6",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2 || ^4.0.0"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/test/setup.js"

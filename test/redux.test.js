@@ -1,4 +1,6 @@
-import { SET_MOBILE_DETECT, setMobileDetect, reducer, initialState, defaultSize, defaultSizes } from '../src'
+import {
+  SET_MOBILE_DETECT, setMobileDetect, reducer, initialState, defaultSize, defaultSizes,
+} from '../src'
 
 describe('redux', () => {
   describe('actions', () => {
