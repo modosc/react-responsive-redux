@@ -62,7 +62,19 @@ npm install react-responsive-redux
 "redux": "^3.7.2"
 ```
 
+
 ## Usage
+### Example
+Inside the `example` directory run:
+```
+$ yarn install
+$ yarn build
+$ yarn start
+```
+Try loading the page with chrome on a desktop display and pretending to be a mobile device.
+In both cases you'll notice the initial redux state is correct and there's no error in the console.
+
+### Overview
 To use `react-responsive-redux` you need to do the following:
 1. Add a redux reducer to your store
 2. Add mobile detection and an action dispatch in your request handler
