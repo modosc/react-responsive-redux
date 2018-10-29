@@ -16,7 +16,7 @@
     "react-dom": "^16.3.1",
     "react-hot-loader": "^4.3.11",
     "react-redux": "^5.0.7",
-    "react-responsive-redux": "^0.7.0",
+    "react-responsive-redux": "https://github.com/modosc/react-responsive-redux#react-responsive-6",
     "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
     "serve-static": "^1.13.2"

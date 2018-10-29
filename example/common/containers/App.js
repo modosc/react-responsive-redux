@@ -11,17 +11,18 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators(CounterActions, dispatch)
-const App = (props = {}) =>
+const App = (props = {}) => (
   <div>
     <div>
       <MobileScreen>
-        <div>You are a mobile device</div>
+        <div className="mobile-screen">You are a mobile device</div>
       </MobileScreen>
       <DesktopScreen>
-        <div>You are a desktop</div>
+        <div className="desktop-screen">You are a desktop</div>
       </DesktopScreen>
     </div>
     <Counter {...props} />
   </div>
+)
 
 export default hot(module)(connect(mapStateToProps, mapDispatchToProps)(App))
