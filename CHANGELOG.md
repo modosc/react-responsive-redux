@@ -1,6 +1,9 @@
 ## Change Log
 
-### upcoming (2018/10/10 04:17 +00:00)
+### upcoming (2019/06/24 16:20 +00:00)
+- [b6fd66d](https://github.com/modosc/react-responsive-redux/commit/b6fd66db4bf11c1e4bea752a6dc614f9361894be) update deps (@modosc)
+- [f5a1561](https://github.com/modosc/react-responsive-redux/commit/f5a15614644e018e9cf09509b6e647ca386c7570) add example code (@modosc)
+- [4649b79](https://github.com/modosc/react-responsive-redux/commit/4649b79f3956241d4e609d853fddc42ef1fb9667) bump to 0.7.0 (@modosc)
 - [e6f5a25](https://github.com/modosc/react-responsive-redux/commit/e6f5a252929b6bbf16f5bc06609b10ea93ba6ba9) revert react-responsive@5 change since it breaks ssr (@modosc)
 - [ead65f6](https://github.com/modosc/react-responsive-redux/commit/ead65f60a1bc7e48b732291ca0f9d0c0600c91cf) update babel to released version, udpate react-responsive dep to @^5 (@modosc)
 
@@ -20,8 +23,8 @@
 - [ab90c68](https://github.com/modosc/react-responsive-redux/commit/ab90c688f9dfd9ae9d8cdda8f7a122581413c8fb) add bootstrap components (@modosc)
 
 ### v0.3.0 (2017/12/15 21:53 +00:00)
-- [a73c006](https://github.com/modosc/react-responsive-redux/commit/a73c00628754ef7ac22ed45d7606cfe3536cd3ff) updates, default to desktop size instead of tablet + 1, explicitly export methods to work around broken webpack treeshaking (@modosc)
 - [c4b82af](https://github.com/modosc/react-responsive-redux/commit/c4b82af78f78820f978d6505f5e46fc4d20e51d0) update CHANGELOG
+- [a73c006](https://github.com/modosc/react-responsive-redux/commit/a73c00628754ef7ac22ed45d7606cfe3536cd3ff) updates, default to desktop size instead of tablet + 1, explicitly export methods to work around broken webpack treeshaking (@modosc)
 - [aa9ccac](https://github.com/modosc/react-responsive-redux/commit/aa9ccac94e6e6ab837f21fce8ea55d01476fa4d1) Dependency updates
 - [8270e0f](https://github.com/modosc/react-responsive-redux/commit/8270e0ff2433c86d52ec9c027d1908c934b48f4e) MediaQuery child can be a node or func. (@marnusw)
 
