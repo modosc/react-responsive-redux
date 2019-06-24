@@ -1,6 +1,6 @@
 {
   "name": "react-responsive-redux",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "redux integration for react-responsive",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -57,7 +57,7 @@
     "cross-env": "^5.0.5",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.1",
-    "eslint": "^6.0.0",
+    "eslint": "^5.6.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-import": "^2.7.0",

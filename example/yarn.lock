@@ -3432,10 +3432,8 @@ react-redux@^5.0.7:
     react-is "^16.6.0"
     react-lifecycles-compat "^3.0.0"
 
-react-responsive-redux@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/react-responsive-redux/-/react-responsive-redux-0.7.0.tgz#8fb4f091caf89e3507fb95b82d75afcb57140ed1"
-  integrity sha512-kstdXaSQVQJD8pRkmAGB8fzOjO6UwB8sRwsblOtz9H4UHuLGCMkSZmxjin2OXgQCK8rrnVorhgjpTwP14frv/w==
+react-responsive-redux@../:
+  version "0.8.0"
   dependencies:
     "@babel/runtime" "^7.0.0-beta.35"
     mobile-detect "^1.3.7"
