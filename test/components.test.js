@@ -43,6 +43,10 @@ describe('components', () => {
       const component = shallow(<MediaQueryWrapper component="p" />)
       expect(component).to.have.prop('component').deep.equal('p')
     })
+    it('supports React.Fragment', () => {
+      const component = shallow(<MediaQueryWrapper component={React.Fragment} />)
+      expect(component).to.have.prop('component').deep.equal(React.Fragment)
+    })
 
     it('handles MediaQuery props', () => {
       const component = shallow(<MediaQueryWrapper {...{ query }} />)
