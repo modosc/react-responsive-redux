@@ -1,4 +1,9 @@
-import _objectSpread from "@babel/runtime/helpers/objectSpread";
+import _defineProperty from "@babel/runtime/helpers/defineProperty";
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { keys.push.apply(keys, Object.getOwnPropertySymbols(object)); } if (enumerableOnly) keys = keys.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { if (i % 2) { var source = arguments[i] != null ? arguments[i] : {}; ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(arguments[i])); } else { ownKeys(arguments[i]).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(arguments[i], key)); }); } } return target; }
+
 import { defaultSizes } from './defaults';
 export var SET_MOBILE_DETECT = '@@react-responsive-redux/SET_MOBILE_DETECT';
 export var setMobileDetect = function setMobileDetect() {
@@ -31,7 +36,7 @@ export var reducer = function reducer() {
   switch (action.type) {
     case SET_MOBILE_DETECT:
       {
-        var _initialState$action = _objectSpread({}, initialState, action),
+        var _initialState$action = _objectSpread({}, initialState, {}, action),
             mobile = _initialState$action.mobile,
             tablet = _initialState$action.tablet,
             phone = _initialState$action.phone,
