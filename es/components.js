@@ -24,7 +24,7 @@ export var MediaQueryWrapper = function MediaQueryWrapper() {
 };
 MediaQueryWrapper.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-  component: PropTypes.oneOfType([PropTypes.node, PropTypes.func, PropTypes.string]),
+  component: PropTypes.oneOfType([PropTypes.node, PropTypes.func, PropTypes.string, PropTypes.symbol]),
   dispatch: PropTypes.func.isRequired,
   fakeWidth: PropTypes.number.isRequired
 };

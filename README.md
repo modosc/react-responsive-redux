@@ -322,6 +322,23 @@ Based on this information and our breakpoints we set a fake screen size in our s
 
 Note that the `desktop` fake width is set to `1200px` rather than `992px` - this is because [worldwide trends](http://gs.statcounter.com/screen-resolution-stats) indicate that most desktop views are >= `1200px` and defaulting the `desktop` size to this means that `<LgScreen>` / `<LgScreenHidden>` are more likely to render correctly on the server side.
 
+### Examples for rendering to different components
+
+```javascript
+import React from 'react'
+import { MobileScreen, DesktopScreen } from 'react-responsive-redux'
+
+const Component = () =>
+  <div>
+    <MobileScreen component="p">
+      You are a mobile device
+    </MobileScreen>
+    <DesktopScreen component={React.Fragment}>
+      You are a desktop
+    </DesktopScreen>
+  </div>
+```
+
 ### TODO
  * Add support for custom breakpoints
  * Add support for custom screen sizes

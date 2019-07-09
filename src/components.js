@@ -24,6 +24,7 @@ MediaQueryWrapper.propTypes = {
     PropTypes.node,
     PropTypes.func,
     PropTypes.string,
+    PropTypes.symbol,
   ]),
   dispatch: PropTypes.func.isRequired,
   fakeWidth: PropTypes.number.isRequired,
