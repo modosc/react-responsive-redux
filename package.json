@@ -32,7 +32,9 @@
     "build": "npm run clean && npm run lint && npm run test && npm run build:commonjs && npm run build:es",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib --source-maps",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es --source-maps",
-    "changelog": "github-changes -o modosc -r react-responsive-redux -b master -f ./CHANGELOG.md --order-semver --use-commit-body"
+    "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
+    "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
+    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
   },
   "author": {
     "name": "jonathan schatz",
@@ -65,7 +67,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.3.0",
     "eslint-plugin-unicorn": "^9.1.1",
-    "github-changes": "^1.1.0",
+    "generate-changelog": "^1.8.0",
     "jest": "^24.8.0",
     "prop-types": "^15.5.0",
     "react": "^16.0.0",
