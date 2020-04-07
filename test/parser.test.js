@@ -1,7 +1,8 @@
 import { mobileParser } from '../src'
 
+const req = (ua) => ({ headers: { 'user-agent': ua } })
+
 describe('mobileParser', () => {
-  const req = ua => ({ headers: { 'user-agent': ua } })
   describe('with a phone', () => {
     const ua = 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0 like Mac OS X) AppleWebKit/602.1.38 (KHTML, like Gecko) Version/10.0 Mobile/14A5297c Safari/602.1'
     it('works', () => {

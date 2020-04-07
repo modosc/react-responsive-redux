@@ -5,6 +5,7 @@ import MediaQuery from 'react-responsive'
 import { connect } from 'react-redux'
 import { breakPoints } from './defaults'
 
+// eslint-disable-next-line react/function-component-definition
 export const MediaQueryWrapper = (props = {}) => {
   // eslint-disable-next-line no-unused-vars
   const {
@@ -35,7 +36,7 @@ MediaQueryWrapper.defaultProps = {
   component: 'div',
 }
 
-export const responsiveWrapper = (props = {}) => connect(state => ({
+export const responsiveWrapper = (props = {}) => connect((state) => ({
   fakeWidth: state.responsive.fakeWidth, ...props,
 }))(MediaQueryWrapper)
 
