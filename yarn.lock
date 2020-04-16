@@ -4944,10 +4944,10 @@ realpath-native@^2.0.0:
   resolved "https://registry.yarnpkg.com/realpath-native/-/realpath-native-2.0.0.tgz#7377ac429b6e1fd599dc38d08ed942d0d7beb866"
   integrity sha512-v1SEYUOXXdbBZK8ZuNgO4TBjamPsiSgcFr0aP+tEKpQZK8vooEUqV6nm6Cv502mX4NF2EfsnVqtNAHG+/6Ur1Q==
 
-redux-test-utils@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/redux-test-utils/-/redux-test-utils-0.3.0.tgz#0a788c1c7d73f8360af7d2559ffc7c3788fce173"
-  integrity sha512-Ee0SB+FjOJ1efnJZY/0MptkmgKodyZfMiHu/g7O5EfoYDOZvWGHF+WD2xBNuwE6sfEzBiHP/7MkJsASoV/Pq/A==
+redux-test-utils@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/redux-test-utils/-/redux-test-utils-1.0.0.tgz#c067db1e2efe5eaaf055c6823e770f2efd155d53"
+  integrity sha512-GePYktjCCcBueomgQTkF0ZcapEQ+BgGkllV2GvvJFeUizcPgvqOoOQ6TmXOCKFg1vHL0cN3KeGM3AH5NnO38Wg==
   dependencies:
     fast-deep-equal "^2.0.1"
 
