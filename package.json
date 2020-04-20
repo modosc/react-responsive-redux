@@ -68,7 +68,7 @@
     "eslint-plugin-react": "^7.3.0",
     "eslint-plugin-unicorn": "^18.0.1",
     "generate-changelog": "^1.8.0",
-    "jest": "25.3.0",
+    "jest": "25.4.0",
     "prop-types": "^15.5.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
