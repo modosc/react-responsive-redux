@@ -36,7 +36,7 @@ export var reducer = function reducer() {
   switch (action.type) {
     case SET_MOBILE_DETECT:
       {
-        var _initialState$action = _objectSpread({}, initialState, {}, action),
+        var _initialState$action = _objectSpread(_objectSpread({}, initialState), action),
             mobile = _initialState$action.mobile,
             tablet = _initialState$action.tablet,
             phone = _initialState$action.phone,
@@ -58,7 +58,7 @@ export var reducer = function reducer() {
           fakeWidth = defaultSize;
         }
 
-        return _objectSpread({}, state, {
+        return _objectSpread(_objectSpread({}, state), {}, {
           mobile: mobile,
           tablet: tablet,
           phone: phone,
