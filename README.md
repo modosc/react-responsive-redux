@@ -1,4 +1,4 @@
-# react-responsive-redux [![npm version](https://badge.fury.io/js/react-responsive-redux.svg)](https://badge.fury.io/js/react-responsive-redux)
+# react-responsive-redux [![npm version](https://badge.fury.io/js/react-responsive-redux.svg)](https://badge.fury.io/js/react-responsive-redux)![Node.js CI](https://github.com/modosc/react-responsive-redux/workflows/Node.js%20CI/badge.svg)
 
 ## The Problem
 If you use [react-responsive](https://github.com/contra/react-responsive) and [server-side-rendering](https://facebook.github.io/react/docs/react-dom-server.html) you've probably come across this cryptic warning in your browser console before:
