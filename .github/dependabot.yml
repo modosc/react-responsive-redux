@@ -6,17 +6,6 @@ updates:
     interval: daily
     time: "13:00"
   open-pull-requests-limit: 10
-  automerged_updates:
-    - match:
-        dependency_type: "development"
-        # Supported dependency types:
-        # - "development"
-        # - "production"
-        # - "all"
-        update_type: "all"
-    - match:
-        dependency_type: "production"
-        update_type: "all"
   ignore:
   - dependency-name: react-redux
     versions:
