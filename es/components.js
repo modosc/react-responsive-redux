@@ -34,7 +34,7 @@ MediaQueryWrapper.propTypes = {
   fakeWidth: PropTypes.number.isRequired
 };
 MediaQueryWrapper.defaultProps = {
-  children: null,
+  children: undefined,
   component: 'div'
 };
 export var responsiveWrapper = function responsiveWrapper() {
