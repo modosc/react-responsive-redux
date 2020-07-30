@@ -32,7 +32,7 @@ MediaQueryWrapper.propTypes = {
 }
 
 MediaQueryWrapper.defaultProps = {
-  children: null,
+  children: undefined,
   component: 'div',
 }
 
