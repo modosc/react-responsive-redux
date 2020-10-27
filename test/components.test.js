@@ -25,6 +25,8 @@ const mountWithStore = (component, store) => {
   return mount(component, { context })
 }
 
+const dispatch = () => {}
+
 describe('components', () => {
   const query = 'min-width: 123'
   const fakeWidth = 123
@@ -58,7 +60,6 @@ describe('components', () => {
       expect(component).to.have.prop('query').deep.equal(query)
     })
     it('handles dispatch', () => {
-      const dispatch = () => {}
       const component = shallow(<MediaQueryWrapper {...{ dispatch }} />)
       expect(component).to.not.have.prop('dispatch')
     })
