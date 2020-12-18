@@ -5229,9 +5229,9 @@ readdirp@~3.5.0:
     picomatch "^2.2.1"
 
 redux-test-utils@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/redux-test-utils/-/redux-test-utils-1.0.0.tgz#c067db1e2efe5eaaf055c6823e770f2efd155d53"
-  integrity sha512-GePYktjCCcBueomgQTkF0ZcapEQ+BgGkllV2GvvJFeUizcPgvqOoOQ6TmXOCKFg1vHL0cN3KeGM3AH5NnO38Wg==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/redux-test-utils/-/redux-test-utils-1.0.2.tgz#2b22b15f0dab622155599b6206fbe954f091d5b1"
+  integrity sha512-YIDu3LHeOQmm/74KMx4jX612LFPxuhNP4MTo933y5aAjxhoITuzdXXUfMVO6tp4pvzTnxvxfPM2mPUrTgi36Ag==
   dependencies:
     fast-deep-equal "^2.0.1"
 
