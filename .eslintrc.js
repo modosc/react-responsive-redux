@@ -7,20 +7,20 @@ module.exports = {
   extends: [
     'airbnb', 'plugin:unicorn/recommended', 'plugin:react/all',
   ],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaVersion: 7,
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true,
-      jsx: true,
-    },
     sourceType: 'module',
+    allowImportExportEverywhere: false,
+    ecmaFeatures: {
+      globalReturn: false,
+    },
+    requireConfigFile: true,
   },
   plugins: [
     'react',
     'babel',
     'unicorn',
-    'jest'
+    'jest',
   ],
   rules: {
     indent: [
